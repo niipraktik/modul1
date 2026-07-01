@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<!-- saved from url=(0086)file:///C:/Users/%D0%9E%D0%BA%D1%81%D0%B0%D0%BD%D0%B0/Downloads/den-1-konspekt_18.html -->
+<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=860">
+<title>День 1 · Природа и виды интеллекта: когнитивные ловушки</title>
+<style>
+  :root{
+    --navy:#13294B;
+    --navy-2:#1C3A66;
+    --gold:#B8893B;
+    --gold-deep:#8A6526;
+    --ink:#222b36;
+    --muted:#5C6B7D;
+    --line:rgba(184,137,59,.45);
+    --soft:rgba(35,48,63,.14);
+    --terra:#C56B45;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:#E9E5DC;
+    font-family:Georgia,'Times New Roman',serif;
+    color:var(--ink);
+    -webkit-text-size-adjust:100%;
+    text-size-adjust:100%;
+  }
+  .bar{
+    position:sticky;top:0;z-index:20;
+    background:#fff;
+    border-bottom:1px solid var(--line);
+    padding:12px 24px;
+    display:flex;align-items:center;justify-content:flex-end;
+    gap:12px;
+  }
+  .bar .brand{
+    margin-right:auto;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-weight:700;
+    font-size:13px;
+    color:var(--navy);
+  }
+  #btnPrint{
+    background:var(--navy);
+    color:#fff;
+    border:none;
+    padding:10px 20px;
+    border-radius:7px;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:.02em;
+    cursor:pointer;
+    touch-action:manipulation;
+    -webkit-tap-highlight-color:rgba(184,137,59,.35);
+  }
+  #btnPrint:hover{background:var(--navy-2)}
+
+  .deck{max-width:860px;margin:32px auto;padding:0 16px 60px}
+
+  .slide{
+    position:relative;
+    background:#fff;
+    width:100%;
+    min-height:1120px;
+    padding:72px 70px 76px;
+    margin-bottom:28px;
+    border-radius:6px;
+    box-shadow:0 1px 3px rgba(19,41,75,.08), 0 10px 30px rgba(19,41,75,.06);
+  }
+  .slide::after{
+    content:"НИИ: Практик · Модуль 1 · День 1";
+    position:absolute;left:70px;bottom:32px;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:10px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);
+  }
+  .slide::before{
+    content:"";
+    position:absolute;right:70px;bottom:38px;
+    width:30px;height:2px;background:var(--gold);
+  }
+
+  /* Title slide */
+  .slide.title .masthead{
+    display:flex;align-items:center;gap:14px;
+    padding-bottom:18px;border-bottom:1px solid var(--line);
+    margin-bottom:26px;
+  }
+  .logo-mark{flex:0 0 auto}
+  .masthead-text .org{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-weight:800;font-size:16px;color:var(--navy);
+  }
+  .masthead-text .authors{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:12.5px;color:var(--muted);margin-top:2px;
+  }
+  .kicker{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    text-transform:uppercase;letter-spacing:.14em;
+    font-size:11px;font-weight:700;color:var(--gold-deep);
+    margin-bottom:10px;
+  }
+  h1{
+    font-family:Georgia,serif;
+    font-weight:800;
+    font-size:38px;
+    line-height:1.14;
+    color:var(--navy);
+    margin:0 0 12px;
+  }
+  .subtitle{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-weight:700;font-size:17px;color:var(--gold-deep);
+    margin:0 0 18px;
+  }
+  .lede{
+    font-family:Georgia,serif;
+    font-style:italic;color:var(--muted);
+    font-size:15.5px;line-height:1.65;
+    max-width:640px;
+  }
+  .toc{margin-top:34px;border-top:1px solid var(--line)}
+  .toc .row{
+    display:flex;align-items:center;gap:14px;
+    padding:15px 0;border-bottom:1px solid var(--line);
+  }
+  .toc .row b{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:14.5px;color:var(--ink);font-weight:700;
+  }
+  .toc-label{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    text-transform:uppercase;letter-spacing:.12em;
+    font-size:11px;font-weight:700;color:var(--gold-deep);
+    margin-bottom:2px;
+  }
+
+  /* Chapter header */
+  .part{display:flex;align-items:center;gap:12px;margin:0 0 24px}
+  .dot{
+    flex:0 0 auto;width:30px;height:30px;border-radius:50%;
+    background:var(--navy);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Helvetica Neue',Arial,sans-serif;font-weight:800;font-size:14px;
+    margin-right:12px;
+  }
+  .part .label{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    text-transform:uppercase;letter-spacing:.1em;
+    font-size:13px;font-weight:700;color:var(--gold-deep);
+  }
+
+  h2{font-family:Georgia,serif;font-weight:800;font-size:21px;color:var(--navy);margin:26px 0 10px}
+  h3{font-family:Georgia,serif;font-weight:800;font-size:17px;color:var(--navy);margin:20px 0 8px}
+  p{font-size:15.5px;line-height:1.72;margin:0 0 15px;color:var(--ink)}
+  p.muted{color:var(--muted)}
+  b{color:var(--navy)}
+
+  .quote{
+    position:relative;
+    background:#FBF7EF;
+    border:1.5px solid var(--gold);
+    border-radius:10px;
+    padding:22px 30px 22px 54px;
+    font-family:Georgia,serif;
+    font-weight:700;font-style:normal;
+    color:var(--navy);
+    font-size:16px;line-height:1.6;
+    margin:20px 0;
+  }
+  .quote::before{
+    content:"\201C";
+    position:absolute;left:16px;top:2px;
+    font-size:46px;line-height:1;
+    color:var(--gold);font-family:Georgia,serif;font-weight:700;
+  }
+
+  .reflect{
+    background:var(--navy);color:#fff;
+    border-radius:10px;padding:20px 26px;margin:20px 0;
+  }
+  .rf-h{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    text-transform:uppercase;letter-spacing:.1em;
+    font-size:11.5px;font-weight:700;color:#D9C48F;
+    margin-bottom:10px;
+  }
+  .reflect p{font-family:'Helvetica Neue',Arial,sans-serif;font-size:14.5px;line-height:1.6;color:#fff;margin:0}
+  .reflect b{color:#F0DFB8}
+
+  .brainbox{
+    border:1.5px solid var(--navy);
+    border-radius:10px;padding:20px 26px;margin:20px 0;background:#fff;
+  }
+  .bb-h{font-family:Georgia,serif;font-weight:800;font-size:16.5px;color:var(--navy);margin-bottom:10px}
+  .brainbox p{margin:0}
+
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 0}
+  .mini{border:1.5px solid var(--soft);border-top:3px solid var(--gold);border-radius:10px;padding:16px 18px}
+  .mini.intu{border-top-color:var(--terra)}
+  .tag{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    text-transform:uppercase;letter-spacing:.08em;
+    font-size:11px;font-weight:700;color:var(--gold-deep);margin-bottom:8px;
+  }
+  .mini.intu .tag{color:var(--terra)}
+  .mini ul{margin:0;padding-left:18px;font-size:14px;line-height:1.62;color:var(--ink)}
+  .mini li{margin-bottom:5px}
+
+  .rcards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
+  .rcard{border:1.5px solid var(--soft);border-radius:10px;padding:15px 16px;background:#FBF9F5}
+  .rc-name{font-family:Georgia,serif;font-weight:800;font-size:15.5px;color:var(--navy);margin-bottom:3px}
+  .rc-sub{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    text-transform:uppercase;letter-spacing:.06em;font-size:10px;
+    font-weight:700;color:var(--gold-deep);margin-bottom:8px;
+  }
+  .rcard p{font-size:13px;line-height:1.55;margin:0;color:var(--ink)}
+
+  .formula{
+    border:1.5px solid var(--gold);border-radius:10px;background:#FBF7EF;
+    padding:20px 26px;text-align:center;margin:20px 0;
+    font-family:Georgia,serif;font-size:15.5px;line-height:1.6;color:var(--ink);
+  }
+  .formula b{color:var(--navy)}
+
+  .layers{display:flex;flex-direction:column;gap:10px;margin:20px 0}
+  .layer{
+    background:#FBF9F5;border:1px solid var(--soft);border-radius:8px;
+    padding:14px 18px;display:flex;gap:12px;align-items:baseline;
+  }
+  .layer span{
+    font-family:'Helvetica Neue',Arial,sans-serif;font-weight:800;color:var(--gold-deep);
+    flex:0 0 auto;
+  }
+  .layer p{margin:0;font-size:14.5px}
+
+  .takeaway{background:var(--navy);color:#fff;border-radius:10px;padding:24px 28px;margin:26px 0 0}
+  .ta-h{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    text-transform:uppercase;letter-spacing:.1em;font-size:12px;font-weight:700;
+    color:#D9C48F;margin-bottom:10px;
+  }
+  .takeaway p{margin:0;font-size:15px;line-height:1.68;color:#fff}
+  .takeaway b{color:#F0DFB8}
+
+  a{color:var(--gold-deep)}
+
+  @media print{
+    body{background:#fff}
+    .bar{display:none}
+    .deck{margin:0;padding:0;max-width:none}
+    .slide{
+      box-shadow:none;margin:0;border-radius:0;
+      width:210mm;min-height:297mm;
+      page-break-after:always;
+    }
+    .slide:last-child{page-break-after:auto}
+  }
+</style>
+</head>
+<body>
+  <div class="bar">
+    <div class="brand">НИИ: Практик · День 1</div>
+    <button id="btnPrint">Сохранить / Распечатать (PDF)</button>
+  </div>
+
+  <div class="deck">
+
+    <!-- TITLE -->
+    <div class="slide title">
+      <div class="masthead">
+<img class="logo-mark" width="38" height="38" alt="НИИ Практик" src="data:image/png;base64,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">
+        <div class="masthead-text">
+          <div class="org">НейроИнтуитивный интеллект: Практик</div>
+          <div class="authors">Дмитрий Рустамович Ягудин</div>
+        </div>
+      </div>
+
+      <div class="kicker">Модуль 1 · День 1</div>
+      <h1>Природа и виды интеллекта: когнитивные ловушки</h1>
+      <div class="subtitle">Как мозг принимает решения и где рождаются ловушки, которые уводят от цели</div>
+      <p class="lede">Это первое занятие интенсива «НИИ: Практик». Сегодня закладывается фундамент на все следующие недели: как устроено принятие решения на уровне мозга, чем настоящее движение к цели отличается от иллюзии движения и почему одних знаний никогда не бывает достаточно. Лекция специально длинная и плотная – чтобы вы на себе почувствовали, как мозг работает в перегрузке.</p>
+
+      <div class="toc">
+        <div class="row"><span class="dot">1</span><div><div class="toc-label">Часть 1</div><b>Зачем разбирать когнитивные ловушки прежде техник</b></div></div>
+        <div class="row"><span class="dot">2</span><div><div class="toc-label">Часть 2</div><b>Как мозг принимает решение: две системы и три мозга</b></div></div>
+        <div class="row"><span class="dot">3</span><div><div class="toc-label">Часть 3</div><b>Три этапа решения и где в них рождаются ловушки</b></div></div>
+        <div class="row"><span class="dot">4</span><div><div class="toc-label">Часть 4</div><b>Доминанта и чужой стресс: как не терять фокус</b></div></div>
+        <div class="row"><span class="dot">5</span><div><div class="toc-label">Часть 5</div><b>Три ловушки, которые легко заметить, и что делать дальше</b></div></div>
+      </div>
+    </div>
+
+    <!-- PART 1 / SLIDE 1 -->
+    <div class="slide">
+      <div class="part"><span class="dot">1</span><span class="label">Зачем разбирать когнитивные ловушки прежде техник</span></div>
+
+      <p>Начнём с примера. Уоррен Баффет – миллиардер, который умеет вкладывать деньги и почти всегда принимает выгодные решения. Все спрашивают: в чём его магический способ? Ответ проще, чем кажется: он умеет замечать когнитивные ловушки и прогоняет через них каждое своё решение. При этом даже у него случаются провалы: было очень крупное вложение в обувную компанию, на котором он потерял сотни миллионов долларов – именно потому, что в тот момент попал в когнитивную ловушку и не послушал своего партнёра.</p>
+
+      <p>С этого мы и начинаем: с когнитивными ловушками нужно работать не разово, а всю жизнь, потому что именно они стоят между решением и результатом.</p>
+
+      <p>Сразу возникает вопрос: в чём вообще измеряется эффективность? Не в хорошем настроении – оно легко создаётся мороженым и так же легко проходит вместе с сахаром в крови. Не в самом действии как таковом – можно действовать быстро и красиво и всё равно прийти не туда. Ответ, к которому приходят: в материи. <b>Мы живём по законам физики, и любое движение формирует материальные изменения.</b></p>
+
+      <div class="formula">Энергия рано или поздно превращается в материю.<br>Новое действие формирует новый итог – новый итог формирует новую картину материального мира.</div>
+
+      <p>Именно поэтому итог работы с любым человеком – это всегда улучшение его материального благополучия: не обязательно деньги напрямую, а здоровье, отношения, финансовое состояние. Если благополучие не улучшилось, то, каким бы красивым ни было решение, оно не сработало. И вот здесь начинается главное: именно когнитивные ловушки чаще всего стоят между вашим решением и этим результатом.</p>
+    </div>
+
+    <!-- PART 1 / SLIDE 2 -->
+    <div class="slide">
+      <div class="part"><span class="dot">1</span><span class="label">Практика прежде знаний: как мы будем работать</span></div>
+
+      <p>Взрослый человек обучается только одним путём: <b>сначала практика, а потом понимание.</b> Если хочется сначала «понять», человек так и останется тем, кто хочет понять, но не делает.</p>
+
+      <p>Из истории Дмитрия Рустамовича: он много ездил по Европе и России с лекциями и заметил, что одни и те же люди снова и снова приходят на его выступления. Он подошёл и проверил – спросил, помнят ли они тему прошлой встречи месяц назад. «Да-да, помним, было очень интересно, мы всё подзаписали», – ответили они. Только тема, о которой он спрашивал, была совсем другой. Они просто не помнили. Из семи опрошенных коллег пятеро подтвердили: «Да, помню» – хотя это было неправдой, а двое честно признались, что смутились.</p>
+
+      <div class="quote">Мы назвали это «попа с ручкой»: человек сидит, очень старательно всё пишет, дословно, через запятую, даже поднимает руку, что-то уточняет – а потом не помнит вообще ничего.</div>
+
+      <p>Поэтому на курсе нет цели «записать всё дословно». Есть цель – размышлять и практиковать. <b>Ошибаться – часть процесса</b>, причём в обе стороны: иногда мы боимся ошибиться и не даём себе проявиться, а иногда ошибаемся и включаем защиту, потому что своя интерпретация кажется более правильной. И то, и другое нормально, если ошибку проговаривать и разбирать, а не прятать.</p>
+
+      <p>Ещё один ориентир – не учиться ради обучения. <b>Практическое мышление</b> – это когда каждым своим действием, мышлением, информацией вы отвечаете за конечный результат. <b>Теоретическое мышление</b> – это детская история из школы: «сейчас я всё узнаю, и точно всё получится». На деле мозг отфильтровывает всё новое и старается подвести его под старое: человек получает комплимент от лектора и расходится довольным, а результата не появляется.</p>
+
+      <div class="reflect">
+        <div class="rf-h">Ответственность 100 на 100</div>
+        <p>Ответственность за результат лежит как на спикере, так и на участнике. Это обмен энергией и движением, и он работает в обе стороны.</p>
+        <p style="margin-top:12px;font-style:italic">Дмитрий Рустамович: «Я вкладываюсь на 150%. Но я перестану это делать, если вы не будете делать хотя бы свои 100%. Потому что это энергия, это обмен, это движение».</p>
+      </div>
+
+      <p>Отсюда и структура каждого модуля: лекция, разбор механизма, задание с бадди (партнёром по обучению), отработка между встречами в общем чате и практика на ваших собственных кейсах.</p>
+    </div>
+
+    <!-- PART 1 / SLIDE 3 -->
+    <div class="slide">
+      <div class="part"><span class="dot">1</span><span class="label">Цель сегодняшнего дня</span></div>
+
+      <p>Цель сегодняшнего дня – понять, как мозг принимает решение и в какой момент возникают ловушки, которые уводят от результата.</p>
+
+      <p>Представьте самолёт. Он летит с полной уверенностью, что движется точно в заданную точку. Но в какой-то момент пилот чуть взволновался, чуть неправильно скорректировал курс, отвлёкся и не заметил этого – самолёт по-прежнему уверен, что летит туда же, а на деле оказывается совсем в другом месте. <b>Мозг формирует решение до момента осознания</b>: очень часто мы подсознательно уже двигаемся куда-то не туда, но продолжаем думать, что идём к прежней цели. Навигация сбивается – и по жизни это происходит точно так же.</p>
+
+      <div class="quote">Всё, что к вам приходит в голову, – реализуемо. Не приходят к нам идеи, которые мы не можем воплотить. В неподготовленный мозг не приходят идеи.</div>
+
+      <p>Это ключевая мысль дня, потому что она снимает очень популярное когнитивное искажение – «наверное, я неправильно поставил цель в начале, на самом деле я хотел другого». Эту мысль стоит запомнить как формулу и держать в голове.</p>
+
+      <p class="muted">Что чаще всего мешает движению? Не отсутствие знаний и умений. У человека может быть <b>открыто слишком много вкладок сразу</b> – огромный поток информации, в котором не разобрать, какая мысль на самом деле мешает. Может звучать внутренний рассказ «какой я недостаточный» вместо «какой я сильный». Может быть неуверенность, что цель вообще правильная. Первый шаг – не решить всё сразу, а увидеть сам механизм, откуда берутся такие мысли. Именно этим мы и займёмся дальше.</p>
+    </div>
+
+    <!-- PART 2 / SLIDE 4 -->
+    <div class="slide">
+      <div class="part"><span class="dot">2</span><span class="label">Две системы мозга: фоновая и исполнительная</span></div>
+
+      <p>В мозге постоянно работают две системы, и важно различать, какая из них ведёт вас в конкретный момент.</p>
+
+      <div class="duo">
+        <div class="mini neuro">
+          <div class="tag">Дефолтная система</div>
+          <ul>
+            <li>работает без воли, даже во сне</li>
+            <li>накапливает весь жизненный опыт</li>
+            <li>отвечает за осознание и самоидентификацию</li>
+            <li>даёт мгновенный результат и мгновенные ощущения</li>
+            <li>тратит 15–20% энергии тела</li>
+          </ul>
+        </div>
+        <div class="mini intu">
+          <div class="tag">Исполнительная система</div>
+          <ul>
+            <li>это префронтальная кора</li>
+            <li>отвечает за логику, планирование, концентрацию</li>
+            <li>включается на всё новое и непривычное</li>
+            <li>устаёт примерно через 20 минут работы</li>
+            <li>тратит уже 80% энергии тела</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>Важное уточнение: если у вас есть навык – например, вы умеете рисовать или решать длинные уравнения, – мозг делает это в дефолтной, а не в исполнительной системе, даже если задача выглядит сложной со стороны. Исполнительная система нужна только для по-настоящему нового.</p>
+
+      <div class="brainbox">
+        <div class="bb-h">Почему мыслители такие худые</div>
+        <p>Мозгу для работы исполнительной системы нужны быстрые углеводы, а не белки и жиры. Когда еды слишком много, кровь уходит на переваривание и на время буквально «забирается» из головы – думать становится тяжелее. А если углеводов не хватает, организм начинает добывать их из белка: мышцы разрушаются, и человек попадает в состояние, похожее на лёгкую эйфорию. Подобное бывает у людей на белковых диетах без углеводов, и у них может появляться запах ацетона. Поэтому если во время обучения вдруг накрывает лёгкая затуманенность или тянет на сладкое – это чаще не «саботаж», а нехватка топлива для префронтальной коры.</p>
+      </div>
+    </div>
+
+    <!-- PART 2 / SLIDE 5 -->
+    <div class="slide">
+      <div class="part"><span class="dot">2</span><span class="label">Три мозга: рептильный, лимбический, неокортекс</span></div>
+
+      <p>Есть ещё одна карта, более простая. У человека три уровня мозга, и у каждого своя логика принятия решений.</p>
+
+      <div class="rcards">
+        <div class="rcard">
+          <div class="rc-name">Рептильный</div>
+          <div class="rc-sub">Инстинкт</div>
+          <p>Бей, беги, ешь, спрячься. Срабатывает автоматически, до всякого размышления – с ним ничего нельзя «обсудить».</p>
+        </div>
+        <div class="rcard">
+          <div class="rc-name">Лимбический</div>
+          <div class="rc-sub">Эмоция</div>
+          <p>Хочу, чтобы было хорошо. Здесь уже появляется иерархия и оценка: кого бояться, кому доверять, что приятно.</p>
+        </div>
+        <div class="rcard">
+          <div class="rc-name">Неокортекс</div>
+          <div class="rc-sub">Логика</div>
+          <p>Речь, последовательность, осознанное решение, удержание цели во времени.</p>
+        </div>
+      </div>
+
+      <p>Задача, ради которой мы вообще всё это разбираем: <b>заменить импульс рептильного мозга и эмоцию лимбической системы на решение неокортекса</b> – не подавить их, а провести решение через осознанную часть мозга.</p>
+
+      <div class="quote">Каждая эмоция – это движение. Непроявленная эмоция – это остановленное движение, и оно создаёт спазм.</div>
+
+      <p>Спазм даёт боль, боль – напряжение и застой в теле. Если решение принято не из неокортекса, а из лимбической системы (сладко-приятно, тревожно-страшно), человека фактически ведёт не он сам, а его собственная эмоция: «где сладко, туда и пойду, где тревожно – буду плакать и потом объясню себе, почему».</p>
+    </div>
+
+    <!-- PART 3 / SLIDE 6 -->
+    <div class="slide">
+      <div class="part"><span class="dot">3</span><span class="label">Этап 1. Информационно-мотивационный</span></div>
+
+      <p>В принятии решения выделяются три этапа – и на каждом рождается своя ловушка.</p>
+
+      <p>Цель первого этапа – правильно сформулировать сам запрос (что именно вы хотите решить) и набрать об этом максимум информации. Настоящий запрос неокортекса звучит утвердительно и спокойно, без лишних эмоций: «я возьму ручку» – и всё, без объяснений и уговоров.</p>
+
+      <div class="brainbox">
+        <div class="bb-h">Первая ловушка: подмена желания на мотив</div>
+        <p>Мозг убегает от трудного желания к лёгкому мотиву. Вместо «я возьму ручку, потому что мне нужно решить задачу» появляется «мне будет удобнее сидеть, если я возьму ручку». Формально действие то же самое, но решение принято уже не неокортексом, а лимбической системой – ради комфорта, а не ради результата.</p>
+      </div>
+
+      <p>Вторая ловушка этого этапа – говорить о будущем в прошедшем времени, будто решение уже принято и реализовано. С точки зрения мозга это работает не так, как обещают некоторые техники: мозг считает, что вы уже согласились с результатом, и перестаёт искать способ его реализовать. Мечтать о конечном результате приятно само по себе – столько дофамина, столько удовольствия, – а когда вы возвращаетесь в быт, там ещё нужно принимать решения, и вы говорите себе «ну и ладно».</p>
+
+      <div class="formula">Три единицы позитива от мечты – и всего одна единица негатива от того, что ничего не получилось.<br>Поэтому от красивой цели так легко отказаться: удовольствие вы уже получили.</div>
+
+      <p class="muted">Отдельное уточнение: цель не всегда обозрима, и это нормально. Не у каждого был опыт двигаться в неизвестности, и не всегда можно заранее выстроить логическую цепочку до самого конца. Это не повод сомневаться в решении – это честная особенность движения в новое.</p>
+    </div>
+
+    <!-- PART 3 / SLIDE 7 -->
+    <div class="slide">
+      <div class="part"><span class="dot">3</span><span class="label">Этап 2. Информационно-нагрузочный</span></div>
+
+      <p>Цель второго этапа – продолжать копить информацию и отдать задачу в фоновый режим: вы делаете то, что уже умеете, а более сложные вещи параллельно обдумываются сами. Идеально, если это спокойное физическое действие, чтение, любое привычное занятие – мозг в этот момент пополняет базу и ищет нестандартное решение.</p>
+
+      <div class="brainbox">
+        <div class="bb-h">Опасность этапа: иллюзия «уже умею»</div>
+        <p>Работают зеркальные нейроны: когда вы видите, как кто-то уверенно и эмоционально о чём-то рассказывает, в вашем мозге на секунду включаются те же зоны, что у самого рассказчика. Это тот же механизм, что срабатывает в театре, когда актёр играет так хорошо, что зритель как будто сам проживает роль. Информация зашла, а навыка – нет: <b>есть информация о том, что такое велосипед и как на нём кататься, но нет самого двигательного акта.</b></p>
+      </div>
+
+      <div class="quote">Навык равно многократное повторение с конкретным физическим результатом. Умеешь – не говоришь, а делаешь.</div>
+
+      <p>Отсюда простой диагностический приём: если вы ловите себя на фразе «я хочу сделать» – это первый сигнал, что вы сами себе признались: «пока не умею». «Хочу» – слово продолжительное, по сути «хочу хотеть». Дело чаще не в нехватке информации, а в нехватке опыта и повторений: <b>когда человек действительно умеет, он об этом не убеждает – ни себя, ни других, он просто берёт и делает.</b></p>
+    </div>
+
+    <!-- PART 3 / SLIDE 8 -->
+    <div class="slide">
+      <div class="part"><span class="dot">3</span><span class="label">Этап 3. Операционно-продуктивный</span></div>
+
+      <p>На третьем этапе мозг выдаёт готовый ответ – не логическую мысль и не ощущение «верно/неверно», а решение, которое тут же переходит в действие. В идеале это выглядит как поток: вы поняли – тут же начали делать – получили обратную связь от мира – скорректировались на ходу. Это и есть продукт нейроинтуиции: не рационализация «как лучше», а чувствование, на котором строятся автоматически верные решения.</p>
+
+      <p>Неидеальный вариант этого этапа – когда решение выносится не из ощущения, а из старой подсознательной установки, которую здесь называют «жвачкой»: мозг крутит одну и ту же мысль по кругу и ищет ей подтверждение в реальности. «Деньги – зло», «у меня не выйдет» – подсознание не работает с фактами, оно быстро собирает вокруг любое подтверждение того, что установка верна.</p>
+
+      <div class="formula">Инструмент против «жвачки» – вернуться к факту.<br>Не «а что если», а: что случилось на самом деле? Что вы знаете об этом? Это точно так?</div>
+
+      <p>Есть и обратная ошибка – пытаться поменять установку напрямую, например, через регрессивный гипноз, без наработки нового навыка движения. Установку убирают, а тело по-прежнему не умеет действовать иначе – и мозг говорит «нет, не сходится», потому что для новой модели поведения нет опоры в реальном опыте.</p>
+
+      <div class="quote">Умеешь – делай, не сотрясай воздух.</div>
+    </div>
+
+    <!-- PART 4 / SLIDE 9 -->
+    <div class="slide">
+      <div class="part"><span class="dot">4</span><span class="label">Доминанта: куда направлено внимание, туда и идёт энергия</span></div>
+
+      <p>У каждого человека постоянно есть своя доминанта – центральный очаг, вокруг которого мозг собирает всю переработку информации. Это может быть большая цель, которую вы пока не понимаете, как реализовать, но все импульсы уже стягиваются к ней.</p>
+
+      <div class="quote">И импульс, и энергия текут туда, куда направлено внимание.</div>
+
+      <p>Доминанта устроена просто и одновременно жёстко: <b>чем дольше вы удерживаете вектор внимания, тем сильнее он вытесняет всё, что в него не входит.</b> Это же и единственный способ выйти из негативного состояния или травмирующего опыта – его нельзя просто «убрать», его можно только вытеснить новой, более сильной и позитивной доминантой. Старая просто гаснет.</p>
+
+      <p>Отсюда практическое следствие: если решение мотивационное («чтобы мне было хорошо»), а не утвердительное («я это делаю»), импульс попадёт не в решение задачи, а в поиск немедленного комфорта. Мозг не будет ничего решать – ему нужно, чтобы стало хорошо прямо сейчас.</p>
+
+      <div class="brainbox">
+        <div class="bb-h">У вас ограниченный запас энергии</div>
+        <p>У вас есть ограниченный запас энергии для мыслительных усилий, и мозг не будет тратить её, если в этом нет крайней необходимости. Именно поэтому лучший отдых – активный, а не «лежать и ничего не делать»: как только вы отпускаете тело и мысли в свободное плавание, вместо отдыха приходит тревога.</p>
+      </div>
+    </div>
+
+    <!-- PART 4 / SLIDE 10 -->
+    <div class="slide">
+      <div class="part"><span class="dot">4</span><span class="label">Чужой стресс: правило 15 минут</span></div>
+
+      <p>Отдельная тема – эмоциональное заражение. Если рядом человек в тревоге, в стрессе, а его состояние никак не связано с тем, чем вы сейчас заняты, – ваш уровень кортизола поднимается на 26% просто через зеркальные нейроны и лимбическую систему: вы буквально отражаете чужое состояние.</p>
+
+      <div class="reflect">
+        <div class="rf-h">Право, а не грубость</div>
+        <p>У вас есть право сказать человеку прямо: он сейчас распространяет тревогу на остальных. Здесь важно подчеркнуть: <b>у вас есть не больше 15 минут</b>, чтобы побыть с чужим тревожным состоянием, прежде чем принять решение – либо помочь конкретным действием, либо мягко выйти из контакта.</p>
+      </div>
+
+      <p>Важно различать два случая. Если у человека действительно что-то случилось и есть конкретные факты – это повод помочь по делу: спросить, что произошло, предложить конкретное действие. Если фактов нет, а есть только тревожная позиция и желание, чтобы кто-то «пожалел», – втягиваться в это не нужно: сочувствие тут не помогает ни вам, ни ему.</p>
+
+      <p>Правило простое и жёсткое: <b>чем ближе к вам такой человек и чем выше его статус, тем быстрее нужно ограничивать контакт</b> – потому что тревога распространяется по касательной, вниз по всей системе. А если тревога поднялась в вас самих – у вас тоже есть эти 15 минут, чтобы остановить её фактами: что на самом деле произошло, а что вы уже успели додумать.</p>
+    </div>
+
+    <!-- PART 5 / SLIDE 11 -->
+    <div class="slide">
+      <div class="part"><span class="dot">5</span><span class="label">Три ловушки, которые легко заметить уже сейчас</span></div>
+
+      <div class="rcards">
+        <div class="rcard">
+          <div class="rc-name">Смешение опыта и памяти</div>
+          <div class="rc-sub">Старый образ на новое</div>
+          <p>Кто-то говорит «будь как ребёнок, радуйся» – а вы вправе не переносить чужой опыт на свою ситуацию: у вас есть другие, не менее интересные способы отдыхать.</p>
+        </div>
+        <div class="rcard">
+          <div class="rc-name">Позиция вместо предмета</div>
+          <div class="rc-sub">Кто я здесь и сейчас</div>
+          <p>Если не удерживать осознанно свою позицию – ученика, партнёра, специалиста, – мозг фильтрует информацию под ту роль, в которой вы случайно оказались, а не под задачу.</p>
+        </div>
+        <div class="rcard">
+          <div class="rc-name">«Попа с ручкой»</div>
+          <div class="rc-sub">Дофамин без действия</div>
+          <p>«Записываю подробно, но не применяю» – типичная иллюзия действия: кажется, что раз накоплено много информации, кто-то должен это оценить.</p>
+        </div>
+      </div>
+
+      <p>Из истории Дмитрия Рустамовича: женщина «вышла замуж как девочка». Партнёр действительно может прожить с ней так всю жизнь. Только рядом появятся отношения, о которых она не узнает, потому что «девочке это не нужно». Смена позиции с девочки на партнёра – это тоже осознанное решение, а не то, что происходит само собой.</p>
+
+      <div class="quote">Попа с ручкой – записываю, но не применяю. То есть дофамин без действия.</div>
+
+      <p>То же самое – с переносом рабочей позиции домой: специалист заходит домой в позиции эксперта, а не партнёра, и раздражается, что домашние «мешают» и «не понимают», хотя проблема в том, что позиция не была осознанно переключена на пороге.</p>
+    </div>
+
+    <!-- PART 5 / SLIDE 12 -->
+    <div class="slide">
+      <div class="part"><span class="dot">5</span><span class="label">Что делать с этим дальше</span></div>
+
+      <div class="layers">
+        <div class="layer"><span>1</span><p>Каждый день в общем чате – короткое размышление об одной когнитивной ловушке: что она означает и был ли у вас похожий момент.</p></div>
+        <div class="layer"><span>2</span><p>Ежедневная «гигиена принятия решений»: утром встали, умылись, послушали, посмотрели, почувствовали.</p></div>
+        <div class="layer"><span>3</span><p>Затем – минута кинестетического движения по отношению к своей цели: постоять, походить, подумать именно о задаче, а не обо всём подряд.</p></div>
+        <div class="layer"><span>4</span><p>Наблюдение за собой в течение недели: где вы говорите «хочу сделать» вместо того, чтобы делать, и в какой момент включается ваша собственная любимая ловушка.</p></div>
+      </div>
+
+      <div class="takeaway">
+        <div class="ta-h">Что важно удержать из сегодняшнего дня</div>
+        <p>Решение становится действием только тогда, когда проходит через неокортекс, а не остаётся мотивом лимбической системы или иллюзией информации без навыка. Сегодняшняя лекция была намеренно длинной и плотной – чтобы вы на себе почувствовали, как мозг работает на перегрузе и перескакивает между системами. Дальше будет спокойнее: каждый следующий модуль – это разбор одной конкретной ловушки, задание с бадди и практика на ваших собственных кейсах. Пока достаточно одного: замечать, в какой момент решение подменяется мотивом, иллюзией или чужой позицией – и возвращаться к простому вопросу: «а что на самом деле я хочу сделать своим действием?»</p>
+      </div>
+    </div>
+
+  </div>
+
+<script>
+(function(){
+  var btn = document.getElementById('btnPrint');
+  if (btn) btn.addEventListener('click', function(){ window.print(); });
+
+  // iOS Safari tap handling: kill the ~300ms delay without breaking scroll
+  function onTap(el, handler){
+    if (!el) return;
+    var startX = 0, startY = 0, moved = false;
+    el.addEventListener('touchstart', function(e){
+      moved = false;
+      var t = e.changedTouches[0];
+      startX = t.clientX; startY = t.clientY;
+    }, {passive:true});
+    el.addEventListener('touchmove', function(e){
+      var t = e.changedTouches[0];
+      if (Math.abs(t.clientX-startX) > 10 || Math.abs(t.clientY-startY) > 10) moved = true;
+    }, {passive:true});
+    el.addEventListener('touchend', function(e){
+      if (!moved){
+        e.preventDefault();
+        handler(e);
+      }
+    });
+  }
+  function tapOnce(selector, handler){
+    document.querySelectorAll(selector).forEach(function(el){ onTap(el, handler); });
+  }
+  tapOnce('#btnPrint', function(){ window.print(); });
+})();
+</script>
+
+</body></html>
