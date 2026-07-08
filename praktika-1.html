@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<!-- saved from url=(0379)file:///C:/Users/%D0%9E%D0%BA%D1%81%D0%B0%D0%BD%D0%B0/Downloads/%D0%9C%D0%BE%D0%B4%D1%83%D0%BB%D1%8C%201%20%C2%B7%20%D0%9F%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B0%201%20%C2%B7%20%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%B8%D1%8F%20%D0%BA%D0%BE%D0%B3%D0%BD%D0%B8%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D1%85%20%D0%B8%D1%81%D0%BA%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9_3.html -->
+<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=860">
+<title>Практика 1 · Лаборатория когнитивных искажений</title>
+<style>
+  :root{
+    --navy:#13294B;
+    --navy-2:#1C3A66;
+    --gold:#B8893B;
+    --gold-deep:#8A6526;
+    --ink:#222b36;
+    --muted:#5C6B7D;
+    --line:rgba(184,137,59,.45);
+    --soft:rgba(35,48,63,.14);
+    --terra:#C56B45;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:#E9E5DC;
+    font-family:Georgia,'Times New Roman',serif;
+    color:var(--ink);
+    -webkit-text-size-adjust:100%;
+    text-size-adjust:100%;
+  }
+  .bar{
+    position:sticky;top:0;z-index:20;
+    background:#fff;
+    border-bottom:1px solid var(--line);
+    padding:12px 24px;
+    display:flex;align-items:center;justify-content:flex-end;
+    gap:12px;
+  }
+  .bar .brand{
+    margin-right:auto;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-weight:700;
+    font-size:13px;
+    color:var(--navy);
+  }
+  #btnPrint{
+    background:var(--navy);
+    color:#fff;
+    border:none;
+    padding:10px 20px;
+    border-radius:7px;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:.02em;
+    cursor:pointer;
+    touch-action:manipulation;
+    -webkit-tap-highlight-color:rgba(184,137,59,.35);
+  }
+  #btnPrint:hover{background:var(--navy-2)}
+
+  .deck{max-width:860px;margin:32px auto;padding:0 16px 60px}
+
+  .slide{
+    position:relative;
+    background:#fff;
+    width:100%;
+    min-height:1120px;
+    padding:72px 70px 76px;
+    margin-bottom:28px;
+    border-radius:6px;
+    box-shadow:0 1px 3px rgba(19,41,75,.08), 0 10px 30px rgba(19,41,75,.06);
+  }
+  .slide::after{
+    content:"НИИ: Практик · Модуль 1 · Практика 1 · 07.07.2026";
+    position:absolute;left:70px;bottom:32px;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:10px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);
+  }
+  .slide::before{
+    content:"";
+    position:absolute;right:70px;bottom:38px;
+    width:30px;height:2px;background:var(--gold);
+  }
+
+  /* Title slide */
+  .slide.title .masthead{
+    display:flex;align-items:center;gap:14px;
+    padding-bottom:18px;border-bottom:1px solid var(--line);
+    margin-bottom:26px;
+  }
+  .logo-mark{flex:0 0 auto}
+  .masthead-text .org{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-weight:800;font-size:16px;color:var(--navy);
+  }
+  .masthead-text .authors{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:12.5px;color:var(--muted);margin-top:2px;
+  }
+  .kicker{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    text-transform:uppercase;letter-spacing:.14em;
+    font-size:11px;font-weight:700;color:var(--gold-deep);
+    margin-bottom:10px;
+  }
+  h1{
+    font-family:Georgia,serif;
+    font-weight:800;
+    font-size:38px;
+    line-height:1.14;
+    color:var(--navy);
+    margin:0 0 12px;
+  }
+  .subtitle{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-weight:700;font-size:17px;color:var(--gold-deep);
+    margin:0 0 18px;
+  }
+  .lede{
+    font-family:Georgia,serif;
+    font-style:italic;color:var(--muted);
+    font-size:15.5px;line-height:1.65;
+    max-width:640px;
+  }
+  .toc{margin-top:34px;border-top:1px solid var(--line)}
+  .toc .row{
+    display:flex;align-items:center;gap:14px;
+    padding:15px 0;border-bottom:1px solid var(--line);
+  }
+  .toc .row b{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-size:14.5px;color:var(--ink);font-weight:700;
+  }
+  .toc-label{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    text-transform:uppercase;letter-spacing:.12em;
+    font-size:11px;font-weight:700;color:var(--gold-deep);
+    margin-bottom:2px;
+  }
+
+  /* Chapter header */
+  .part{display:flex;align-items:center;gap:12px;margin:0 0 24px}
+  .dot{
+    flex:0 0 auto;width:30px;height:30px;border-radius:50%;
+    background:var(--navy);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Helvetica Neue',Arial,sans-serif;font-weight:800;font-size:14px;
+    margin-right:12px;
+  }
+  .part .label{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    text-transform:uppercase;letter-spacing:.1em;
+    font-size:13px;font-weight:700;color:var(--gold-deep);
+  }
+
+  h2{font-family:Georgia,serif;font-weight:800;font-size:21px;color:var(--navy);margin:26px 0 10px}
+  h3{font-family:Georgia,serif;font-weight:800;font-size:17px;color:var(--navy);margin:20px 0 8px}
+  p{font-size:15.5px;line-height:1.72;margin:0 0 15px;color:var(--ink)}
+  p.muted{color:var(--muted)}
+  b{color:var(--navy)}
+
+  .quote{
+    position:relative;
+    background:#FBF7EF;
+    border:1.5px solid var(--gold);
+    border-radius:10px;
+    padding:22px 30px 22px 54px;
+    font-family:Georgia,serif;
+    font-weight:700;font-style:normal;
+    color:var(--navy);
+    font-size:16px;line-height:1.6;
+    margin:20px 0;
+  }
+  .quote::before{
+    content:"\201C";
+    position:absolute;left:16px;top:2px;
+    font-size:46px;line-height:1;
+    color:var(--gold);font-family:Georgia,serif;font-weight:700;
+  }
+  .quote .src{
+    display:block;margin-top:10px;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-weight:700;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--gold-deep);
+  }
+
+  .reflect{
+    background:var(--navy);color:#fff;
+    border-radius:10px;padding:20px 26px;margin:20px 0;
+  }
+  .rf-h{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    text-transform:uppercase;letter-spacing:.1em;
+    font-size:11.5px;font-weight:700;color:#D9C48F;
+    margin-bottom:10px;
+  }
+  .reflect p{font-family:'Helvetica Neue',Arial,sans-serif;font-size:14.5px;line-height:1.6;color:#fff;margin:0}
+  .reflect b{color:#F0DFB8}
+
+  .brainbox{
+    border:1.5px solid var(--navy);
+    border-radius:10px;padding:20px 26px;margin:20px 0;background:#fff;
+  }
+  .bb-h{font-family:Georgia,serif;font-weight:800;font-size:16.5px;color:var(--navy);margin-bottom:10px}
+  .brainbox p{margin:0 0 10px}
+  .brainbox p:last-child{margin-bottom:0}
+
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 0}
+  .mini{border:1.5px solid var(--soft);border-top:3px solid var(--gold);border-radius:10px;padding:16px 18px}
+  .mini.intu{border-top-color:var(--terra)}
+  .tag{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    text-transform:uppercase;letter-spacing:.08em;
+    font-size:11px;font-weight:700;color:var(--gold-deep);margin-bottom:8px;
+  }
+  .mini.intu .tag{color:var(--terra)}
+  .mini ul{margin:0;padding-left:18px;font-size:14px;line-height:1.62;color:var(--ink)}
+  .mini li{margin-bottom:5px}
+
+  .rcards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
+  .rcard{border:1.5px solid var(--soft);border-radius:10px;padding:15px 16px;background:#FBF9F5}
+  .rc-name{font-family:Georgia,serif;font-weight:800;font-size:15.5px;color:var(--navy);margin-bottom:3px}
+  .rc-sub{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    text-transform:uppercase;letter-spacing:.06em;font-size:10px;
+    font-weight:700;color:var(--gold-deep);margin-bottom:8px;
+  }
+  .rcard p{font-size:13px;line-height:1.55;margin:0;color:var(--ink)}
+
+  .formula{
+    border:1.5px solid var(--gold);border-radius:10px;background:#FBF7EF;
+    padding:20px 26px;text-align:center;margin:20px 0;
+    font-family:Georgia,serif;font-size:15.5px;line-height:1.6;color:var(--ink);
+  }
+  .formula b{color:var(--navy)}
+
+  .layers{display:flex;flex-direction:column;gap:10px;margin:20px 0}
+  .layer{
+    background:#FBF9F5;border:1px solid var(--soft);border-radius:8px;
+    padding:14px 18px;display:flex;gap:12px;align-items:baseline;
+  }
+  .layer span{
+    font-family:'Helvetica Neue',Arial,sans-serif;font-weight:800;color:var(--gold-deep);
+    flex:0 0 auto;margin-right:4px;
+  }
+  .layer p{margin:0;font-size:14.5px}
+
+  .case{margin:22px 0;padding-top:18px;border-top:1px solid var(--soft)}
+  .case:first-child{margin-top:8px;padding-top:0;border-top:none}
+  .case-name{
+    font-family:Georgia,serif;font-weight:800;font-size:16.5px;color:var(--navy);
+    margin-bottom:6px;
+  }
+
+  .breakdown{margin-top:10px;display:flex;flex-direction:column;gap:10px}
+  .bd-item{padding:9px 16px;background:#FBF9F5;border-radius:8px}
+  .bd-label{
+    display:block;font-family:'Helvetica Neue',Arial,sans-serif;
+    text-transform:uppercase;letter-spacing:.08em;font-size:10.5px;font-weight:700;
+    color:var(--gold-deep);margin-bottom:4px;
+  }
+  .bd-item.cause .bd-label{color:var(--terra)}
+  .bd-item.result .bd-label{color:var(--navy)}
+  .bd-item p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+
+  .takeaway{background:var(--navy);color:#fff;border-radius:10px;padding:24px 28px;margin:26px 0 0}
+  .ta-h{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    text-transform:uppercase;letter-spacing:.1em;font-size:12px;font-weight:700;
+    color:#D9C48F;margin-bottom:10px;
+  }
+  .takeaway p{margin:0 0 10px;font-size:15px;line-height:1.68;color:#fff}
+  .takeaway p:last-child{margin-bottom:0}
+  .takeaway b{color:#F0DFB8}
+
+  a{color:var(--gold-deep)}
+
+  @page{ size:A4; margin:0 }
+  @media print{
+    html,body{background:#fff;margin:0;padding:0}
+    .bar{display:none}
+    .deck{margin:0;padding:0;max-width:none}
+    .slide{
+      box-shadow:none;margin:0;border-radius:0;
+      width:210mm;min-height:297mm;
+      page-break-after:always;
+      break-after:page;
+    }
+    .slide:last-child{page-break-after:auto;break-after:auto}
+  }
+</style>
+</head>
+<body>
+  <div class="bar">
+    <div class="brand">НИИ: Практик · Практика 1</div>
+    <button id="btnPrint">Сохранить / Распечатать (PDF)</button>
+  </div>
+
+  <div class="deck">
+
+    <!-- TITLE -->
+    <div class="slide title">
+      <div class="masthead">
+<img class="logo-mark" width="40" height="46" alt="НИИ Практик" src="data:image/png;base64,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">
+        <div class="masthead-text">
+          <div class="org">НейроИнтуитивный интеллект: Практик</div>
+          <div class="authors">Дмитрий Рустамович Ягудин · Изабелла Найманова</div>
+        </div>
+      </div>
+
+      <div class="kicker">Модуль 1 · Практика 1 · Природа и виды интеллекта. Когнитивные ловушки</div>
+      <h1>Лаборатория когнитивных искажений</h1>
+      <div class="subtitle">От знания к навыку: разминка внимания и разбор реальных ситуаций участников</div>
+      <p class="lede">Это первая практическая встреча курса, она проходит дважды – с утренней и с вечерней группой, по одному и тому же сценарию. Здесь не читают новую лекцию, а возвращаются к пройденному материалу и разбирают, как когнитивные ловушки из лекции первого дня проявляются в конкретной жизни каждого участника. Разбор идёт не гипотетически, а на реальных ситуациях недели – с каждым, кто на встрече.</p>
+
+      <div class="toc">
+        <div class="row"><span class="dot">1</span><div><div class="toc-label">Часть 1</div><b>Зачем нужна практическая встреча и как она устроена</b></div></div>
+        <div class="row"><span class="dot">2</span><div><div class="toc-label">Часть 2</div><b>Гигиена принятия решений: разминка перед сессией</b></div></div>
+        <div class="row"><span class="dot">3</span><div><div class="toc-label">Часть 3</div><b>Снова к лекции: три шага решения и три уровня мозга</b></div></div>
+        <div class="row"><span class="dot">4</span><div><div class="toc-label">Часть 4</div><b>Разбор запросов. Часть 1 – утренняя группа</b></div></div>
+        <div class="row"><span class="dot">5</span><div><div class="toc-label">Часть 5</div><b>Разбор запросов. Часть 2 – вечерняя группа</b></div></div>
+        <div class="row"><span class="dot">6</span><div><div class="toc-label">Часть 6</div><b>Что делать дальше</b></div></div>
+      </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div class="slide">
+      <div class="part"><span class="dot">1</span><span class="label">Зачем нужна практическая встреча и как она устроена</span></div>
+
+      <p>Практические встречи проходят раз в две недели по вторникам: утренняя группа – в 10:00, вечерняя – в 18:00. Всего за курс будет пять лекций и пять практик, и они чередуются: лекция, практика, лекция, практика. Одна встреча в неделю, но насыщенная – два часа живой работы.</p>
+
+      <p>Формат нарочно построен вокруг включённости. Камера включена не потому, что так положено, а потому что именно через лицо, тело, мимику ведущая получает большую часть информации об участнике – причём не только о том, с кем идёт разговор в моменте, а обо всех, кто на встрече. Пока идёт работа с одним человеком, реакция остальных тоже читается и тоже используется в работе с каждым из них.</p>
+
+      <div class="quote">Практическая встреча – это не пространство, куда вы приходите и рассказываете о своих классных, крутых результатах того, что у вас за неделю произошло… Это встреча, куда вы приносите то, с чем вы хотите научиться справляться в дальнейшем самостоятельно.<span class="src">Изабелла Найманова</span></div>
+
+      <p>Сюда не приходят за оценкой «пятёрки». Сюда приносят дискомфорт: и то, что не получилось, и сопротивление перед тем, что только предстоит сделать, и даже слишком приятные события – потому что любой эмоциональный подъём тоже создаёт напряжение в теле. Если за неделю появилась мысль «сегодня лучше пропущу» – это тоже полноценный запрос для разбора, а не повод не приходить.</p>
+    </div>
+
+    <div class="slide">
+      <div class="part"><span class="dot">1</span><span class="label">Зачем нужна практическая встреча и как она устроена</span></div>
+
+      <div class="brainbox">
+        <div class="bb-h">Почему нужно записывать ловушку сразу, а не по памяти</div>
+        <p>Мозг устроен просто: то, что взволновало в моменте, быстро забывается. Собирались позвонить клиенту – отвлеклись и забыли. Только сели за собственное развитие – у семьи тут же нашлось к вам срочное дело. К началу встречи в голове остаётся белый лист: «с чем-то я точно хотела поработать, но не помню с чем».</p>
+        <p>Поэтому в момент, когда ситуация происходит, стоит завести привычку сразу фиксировать её в заметках или в чате: что случилось, какие были эмоции, что хотелось бы разрешить. Это даёт два эффекта сразу: тело учится эмоциональной регуляции (переход из состояния «я в эмоции» в состояние «я наблюдаю эмоцию»), а на саму встречу приходит не случайный лёгкий вопрос, который вспомнился первым, а по-настоящему глубокий запрос.</p>
+      </div>
+
+      <div class="reflect">
+        <div class="rf-h">Зачем писать ловушки в чат</div>
+        <p>Одна проработанная в чате ситуация запускает сразу пять процессов: мысль в голове – напечатал – отправил – кто-то среагировал – прочитал чужую. Поэтому за первый месяц набирается около 25 разобранных ловушек.</p>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="part"><span class="dot">2</span><span class="label">Гигиена принятия решений: разминка перед сессией</span></div>
+
+      <p>Каждая практическая встреча начинается одинаково – с пятиминутной разминки, той самой гигиены принятия решений, которую участники уже знают по предобучению и интенсиву. Смысл прост: несколько минут, которые возвращают внимание в тело и в момент «здесь и сейчас», делают всю дальнейшую работу заметно более продуктивной.</p>
+
+      <div class="layers">
+        <div class="layer"><span>1</span><p><b>Возвращение контакта.</b> По 30 секунд на каждый канал восприятия: взгляд фиксируется на одном предмете, слух – на одном звуке, внимание – на одном тактильном или внутреннем ощущении.</p></div>
+        <div class="layer"><span>2</span><p><b>Дыхательный клапан «4–8».</b> Вдох на 4 счёта, медленный выдох на 8 счётов, три цикла подряд. Возвращает внутреннее спокойствие и фокус внимания.</p></div>
+        <div class="layer"><span>3</span><p><b>Сенсорный перехват.</b> По одной минуте на три цвета или предмета, три звука и три ощущения – зрение, слух и тело удерживают фокус чуть дольше и чуть шире, чем в первом упражнении.</p></div>
+        <div class="layer"><span>4</span><p><b>Активация нейроинтуиции.</b> Упражнение со стаканом воды на макушке – его оставляют на домашнее задание, самостоятельную практику каждый день.</p></div>
+      </div>
+
+      <div class="formula">Регулярные маленькие действия на длинной дистанции дают куда больший эффект, чем редкие масштабные усилия.<br>Это ровно тот же принцип, что и с чисткой зубов: пять минут в день превращаются в навык, только если делать их каждый день.</div>
+
+      <p class="muted">Практику стоит распечатать и повесить на видное место – на холодильник или на зеркало в ванной: и чтобы не забывать самой, и чтобы вслед начали втягиваться близкие.</p>
+    </div>
+
+    <div class="slide">
+      <div class="part"><span class="dot">3</span><span class="label">Снова к лекции: три шага решения и три уровня мозга</span></div>
+
+      <p>Прежде чем перейти к разборам, вернёмся к каркасу лекции первого дня: мозг принимает решение в три шага, и на каждом из них подстерегает своя когнитивная ловушка.</p>
+
+      <div class="layers">
+        <div class="layer"><span>1</span><p><b>Информационно-мотивационный этап.</b> Здесь рождается сам импульс. В неидеальном сценарии истинное желание подменяется мотивом – это движение «от» проблемы, а не «к» цели. В нейроинтуитивном сценарии импульс утвердительный: «вот моя задача, и я с ней работаю».</p></div>
+        <div class="layer"><span>2</span><p><b>Информационно-нагрузочный этап.</b> Энергия желания переводится в действие. Здесь важен навык находиться в непрерывном движении, даже когда первая искра уже погасла. Самая главная задача, чтобы действие дало результат, который в дальнейшем мы можем проанализировать и построить свой следующий шаг.</p></div>
+        <div class="layer"><span>3</span><p><b>Операционно-продуктивный этап.</b> Сознание и подсознание соединяются, тело и разум начинают двигаться вместе, решения становятся всё более точными автоматически.</p></div>
+      </div>
+
+      <p>Тот же принцип касается и трёх уровней мозга – рептильного, лимбического, неокортекса. Задача не в том, чтобы один раз узнать, как они работают в целом, а в том, чтобы в конкретный момент задавать себе вопрос: <i>из какой части мозга я сейчас принимаю это решение?</i> Такую проверку можно делать прямо в моменте или вечером, как небольшую рефлексию по итогам дня.</p>
+    </div>
+
+    <div class="slide">
+      <div class="part"><span class="dot">3</span><span class="label">Снова к лекции: три шага решения и три уровня мозга</span></div>
+
+      <div class="quote">Я работала в офисе, и в узком коридоре был угол стены с шершавой штукатуркой. В какой-то момент я обнаружила у себя корочку на родимом пятне – и не могла понять, откуда она берётся. Оказалось, что я каждый раз, проходя по коридору, задевала этот угол рукой – легко, почти незаметно, но за день таких касаний набиралось столько, что образовывалась ранка. Фокус внимания просто был в другом месте.<span class="src">Из истории Изабеллы</span></div>
+
+      <p>Это и есть механизм ловушки: не разовый сильный удар, а привычное, незамеченное движение, которое повторяется снова и снова именно потому, что внимание туда не включено. Как только фокус переключается на сам камушек – тело начинает его обходить: сначала реже задевает, потом вообще перестаёт замечать, что перестало его касаться.</p>
+
+      <p>Именно поэтому сегодня не главное – разобрать, как выходить из уже случившейся ловушки. Главное – увидеть сам этот механизм: тот камушек, о который человек спотыкается снова и снова, даже после сотого раза. Работа идёт с причиной, а не со следствием.</p>
+
+      <p>Отсюда и задача сегодняшней встречи: найти не гипотетическую, а самую частую свою ловушку – и увидеть на конкретном примере, как именно в неё попадаешь.</p>
+    </div>
+
+    <div class="slide">
+      <div class="part"><span class="dot">4</span><span class="label">Разбор запросов. Часть 1 – утренняя группа</span></div>
+
+      <div class="case">
+        <div class="case-name">Наташа</div>
+        <div class="breakdown">
+          <div class="bd-item"><span class="bd-label">Запрос</span><p>Написать пост в канал – тема давно найдена, но пост не написан.</p></div>
+          <div class="bd-item cause"><span class="bd-label">Причина</span><p>Подмена цели: «чтобы обо мне знали, чем я занимаюсь» вместо «привлечь клиентов» – два разных вектора, хотя по ощущениям казались одним и тем же. Первый разворачивает внимание на себя, второй – на конкретного человека с его запросом.</p></div>
+          <div class="bd-item result"><span class="bd-label">Итог</span><p>Цель встала впереди, а не сзади: не «специалист, которого должны одобрить», а «специалист, чей талант находит точку применения в чужом запросе». Точка фокуса поменялась; само действие – написать пост – вынесено на неделю.</p><div class="quote" style="margin:12px 0 0">Ты становишься сзади задачи – и задача встаёт перед тобой. Это один из важнейших принципов практического мышления.<span class="src">Изабелла Найманова</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="part"><span class="dot">4</span><span class="label">Разбор запросов. Часть 1 – утренняя группа</span></div>
+
+      <div class="case">
+        <div class="case-name">Светлана</div>
+        <div class="breakdown">
+          <div class="bd-item"><span class="bd-label">Запрос</span><p>Постоянное сравнение себя с более опытными коллегами – у кого-то практика больше, у кого-то за плечами 50 лет стажа.</p></div>
+          <div class="bd-item cause"><span class="bd-label">Причина</span><p>Ловушка самооправдания: «я недостойна, но посмотрите, я же тоже кое-что делаю». Видно на уровне действий: звонок клиентке (у которой аудитория в полтора миллиона подписчиков) откладывался три дня из-за этого сравнения – и силы, нужные для самого разговора, растрачивались заранее, за эти три дня.</p></div>
+          <div class="bd-item result"><span class="bd-label">Итог</span><p>Разговор в итоге прошёл хорошо. Сравнение с более сильными специалистами – не приговор, а топливо для роста, если направлять его не в «спрятаться», а в «стать ещё лучше». Обе крайности – «я крутой спец» и «куда мне до них» – ловушки: правда где-то посередине.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="part"><span class="dot">4</span><span class="label">Разбор запросов. Часть 1 – утренняя группа</span></div>
+
+      <div class="case">
+        <div class="case-name">Ирина</div>
+        <div class="breakdown">
+          <div class="bd-item"><span class="bd-label">Запрос</span><p>Собственная формулировка – «тактика бежать в кусты»: не приносить запрос на встречу, иногда даже пропускать саму встречу. Летом меньше клиентов.</p></div>
+          <div class="bd-item cause"><span class="bd-label">Причина</span><p>Объяснение «лето, никто не придёт» стало готовым оправданием не пробовать вообще. Прошлый быстрый успех (группа за два дня) был списан на везение.</p></div>
+          <div class="bd-item result"><span class="bd-label">Итог</span><p>«Везение» состояло из конкретных вещей – искреннего увлечения идеей и открытого рассказа о ней в соцсетях без попытки сделать всё идеально. Источник результата – внутренний огонь, а не стечение обстоятельств.</p><p>А ещё разбор развернул саму рамку: формат выбирается из желания, а не из ограничения – «мне очень хочется офлайн, я соскучилась», а не «онлайн, потому что лето». И запрос уточнился до того, что по-настоящему «защекотило», – отношения с финансами.</p><div class="quote" style="margin:12px 0 0">Именно поэтому придут те, кому тоже страшно. Это то, в чём ты станешь для них зеркалом.<span class="src">из разбора</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="part"><span class="dot">4</span><span class="label">Разбор запросов. Часть 1 – утренняя группа</span></div>
+
+      <div class="case">
+        <div class="case-name">Даня</div>
+        <div class="breakdown">
+          <div class="bd-item"><span class="bd-label">Запрос</span><p>Сомнения в безопасности решения реализовать техпроект в другой стране.</p></div>
+          <div class="bd-item cause"><span class="bd-label">Причина</span><p>Решение уже принято, но по инерции продолжается перебор аргументов «за» и «против» – теоретическое мышление вместо практического.</p></div>
+          <div class="bd-item result">
+            <span class="bd-label">Итог</span>
+            <p>Действие уже началось: контакт найден, сообщение написано, созвон назначен. Разница в состоянии – с замирания на подъём энергии. Отдельные шаги нанизываются, как бусинки, – и в результате складывается красивое ожерелье.</p>
+            <div class="quote" style="margin:12px 0 0">Помните, как Дмитрий Рустамович говорил? Пускай неуклюже. Профессионал – это тот, кто неуклюже постоянно совершает действия.<span class="src">Дмитрий Рустамович Ягудин</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="part"><span class="dot">4</span><span class="label">Разбор запросов. Часть 1 – утренняя группа</span></div>
+
+      <div class="case">
+        <div class="case-name">Эва</div>
+        <div class="breakdown">
+          <div class="bd-item"><span class="bd-label">Запрос</span><p>Привычка досконально изучать тему прежде, чем начать действовать.</p></div>
+          <div class="bd-item cause"><span class="bd-label">Причина</span><p>Страх, что кто-то задаст вопрос без готового ответа, и тогда «разоблачат» как самоучку. При этом за плечами 13 лет в деле (своё предприятие – семь лет) и законченное образование – сомнений в базе знаний по факту нет.</p></div>
+          <div class="bd-item result">
+            <span class="bd-label">Итог</span>
+            <div class="formula" style="margin:0 0 12px">Представьте, что вы продаёте молоко, а клиент просит гвозди. Специалист даёт результат, а не подтверждение своей компетентности; за знаниями – в другой «магазин».</div>
+            <p>На чём фокус – доказать свои знания или дать результат, – за тем и приходят клиенты. За выходные проведены две групповые сессии вместо продолжения подготовки.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="case">
+        <div class="case-name">Елена</div>
+        <div class="breakdown">
+          <div class="bd-item"><span class="bd-label">Запрос</span><p>Идея онлайн-клуба откладывается месяцами, то поднимается, то забрасывается.</p></div>
+          <div class="bd-item cause"><span class="bd-label">Причина</span><p>Личный паттерн: энергия копится до предела – «либо пусто, либо густо», – а после резкого рывка следует самокритика «это неправильный способ двигаться».</p></div>
+          <div class="bd-item result"><span class="bd-label">Итог</span><p>Это не изъян, а особенность конкретной нервной системы – кто-то марафонец, кто-то спринтер. В день разбора группа создана.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="part"><span class="dot">4</span><span class="label">Разбор запросов. Часть 1 – утренняя группа</span></div>
+
+      <div class="case">
+        <div class="case-name">Лида</div>
+        <div class="breakdown">
+          <div class="bd-item"><span class="bd-label">Запрос</span><p>Собственная метафора – «беременность экспертными знаниями», которая тянется полтора года: пора «родить» продукт, но вместо этого – очередной круг подготовки.</p></div>
+          <div class="bd-item cause"><span class="bd-label">Причина</span><p>Путаница цели: хочется получить ребёнка на руках – или ещё одну инструкцию о том, как правильно рожать? Удобного момента не будет никогда.</p></div>
+          <div class="bd-item result"><span class="bd-label">Итог</span><p>Как только цель уточнилась, ответ стал очевиден: пора рожать неидеально, взяв максимум из того, что уже есть. Баланс – не статика: это как стоять на мяче – качаешься вправо-влево, и то, что не падаешь, и есть баланс; встанешь ровно – упадёшь.</p><div class="quote" style="margin:12px 0 0">Удобного момента не будет никогда. Лучше, чем сейчас, уже не станет.<span class="src">из разбора</span></div></div>
+        </div>
+      </div>
+
+      <div class="reflect">
+        <div class="rf-h">Что объединяет все семь запросов</div>
+        <p>За разными формулировками – «написать пост», «позвонить клиентке», «запустить проект», «изучить ещё раз», «создать клуб», «выпустить продукт» – стоит одна и та же механика: <b>решение чаще всего уже принято, а тормозит не отсутствие ответа, а нежелание признать, что действие пора начинать неидеально.</b> Разбор в каждом случае не добавляет новую информацию, а меняет фокус внимания – с себя и своей оценки на цель и на конкретный первый шаг.</p>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="part"><span class="dot">5</span><span class="label">Разбор запросов. Часть 2 – вечерняя группа</span></div>
+
+      <div class="case">
+        <div class="case-name">Женя</div>
+        <div class="breakdown">
+          <div class="bd-item"><span class="bd-label">Запрос</span><p>Не звонит по «холодной базе» старых анкет, хотя задача понятна.</p></div>
+          <div class="bd-item cause">
+            <span class="bd-label">Причина</span>
+            <p>За напряжением – страх отказа, а за страхом – более глубокое опасение стать «той, кто не звонит». Тело помнит тяжёлую модель продаж «в холодную» из давнего опыта.</p>
+            <div class="quote" style="margin:12px 0 0">Мозг написал план. Сердце его не подписало, а тело отказалось выходить на работу.<span class="src">Дмитрий Рустамович Ягудин</span></div>
+          </div>
+          <div class="bd-item result"><span class="bd-label">Итог</span><p>Отказ – это просто энергия, а не приговор. Цель на самом деле другая – тёплые клиенты через рекомендации, а не холодные звонки.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="part"><span class="dot">5</span><span class="label">Разбор запросов. Часть 2 – вечерняя группа</span></div>
+
+      <div class="case">
+        <div class="case-name">Лена</div>
+        <div class="breakdown">
+          <div class="bd-item"><span class="bd-label">Запрос</span><p>Идея сообщества предпринимателей в Ростове и между городами тормозится сомнением.</p></div>
+          <div class="bd-item cause"><span class="bd-label">Причина</span><p>Мысль «таких сообществ и так уже много, я не придумаю ничего нового». Страх «быть неинтересной, если делать как все» при ближайшем рассмотрении – желание одобрения, а не забота о результате участников.</p></div>
+          <div class="bd-item result"><span class="bd-label">Итог</span><p>Цель сообщества – не изобрести небывалое, а дать участникам реализацию их потенциала через знакомства, поддержку и новых клиентов. Уверенность не берут с собой в дорогу – она приходит по дороге.</p><div class="formula" style="margin:12px 0 0">Рядом уже пять кофеен – ставь шестую и заработаешь: раз их много, значит, спрос большой. Так мыслят предприниматели.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="part"><span class="dot">5</span><span class="label">Разбор запросов. Часть 2 – вечерняя группа</span></div>
+
+      <div class="case">
+        <div class="case-name">Надя</div>
+        <div class="breakdown">
+          <div class="bd-item"><span class="bd-label">Запрос</span><p>Живые встречи с дизайнерами и партнёрами откладываются раз за разом под разными предлогами, хотя в переписке контакт лёгкий.</p></div>
+          <div class="bd-item cause">
+            <span class="bd-label">Причина</span>
+            <p>Страх «подмочить» уже выстроенный образ успешного профессионала перед теми, кто пока видел только его отполированную сторону.</p>
+            <div class="quote" style="margin:12px 0 0">Невозможно научиться играть на аудиторию, находясь в репетиционном зале один на один с собой. Живые встречи – это и есть репетиционный зал, а не главная сцена.<span class="src">из разбора</span></div>
+          </div>
+          <div class="bd-item result"><span class="bd-label">Итог</span><p>Признать «здесь я ученик» не противоречит уверенности в своём деле. Совпадение внешнего образа с внутренним состоянием рождает доверие.</p></div>
+        </div>
+      </div>
+
+      <div class="case">
+        <div class="case-name">Татьяна</div>
+        <div class="breakdown">
+          <div class="bd-item"><span class="bd-label">Запрос</span><p>Сомнение, вовремя ли спланирована поездка с мамой на фоне и так плотного графика.</p></div>
+          <div class="bd-item cause"><span class="bd-label">Причина</span><p>Смешаны два разных состояния: «это не моё решение, а мамино» и «это моё решение, но воплотилось не вовремя». Тревога – образ бешеной белки в колесе.</p></div>
+          <div class="bd-item result"><span class="bd-label">Итог</span><p>Вторая история честнее и не создаёт того же тяжёлого чувства. Непривычный, ускоренный ритм – признак роста, а не поломки.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="part"><span class="dot">5</span><span class="label">Разбор запросов. Часть 2 – вечерняя группа</span></div>
+
+      <div class="case">
+        <div class="case-name">Ира</div>
+        <div class="breakdown">
+          <div class="bd-item"><span class="bd-label">Запрос</span><p>Знакомый цикл из найма перенёсся в свою практику: несколько дней интенсивной работы, затем «отдых», который оборачивается самобичеванием.</p></div>
+          <div class="bd-item cause"><span class="bd-label">Причина</span><p>Поиск права на отдых как награды за результат – по образцу школьных соревнований, где отдых был законной наградой за результат.</p></div>
+          <div class="bd-item result"><span class="bd-label">Итог</span><p>Не мучить себя виной вместо отдыха, а дать себе награду напрямую – конкретный, осознанный жест в честь сделанного. Деньги – не награда; награда – то, что на них покупаешь. У альпинистов есть закон: победу нужно отпраздновать.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="part"><span class="dot">5</span><span class="label">Разбор запросов. Часть 2 – вечерняя группа</span></div>
+
+      <div class="case">
+        <div class="case-name">Наташа</div>
+        <div class="breakdown">
+          <div class="bd-item"><span class="bd-label">Запрос</span><p>Желание повысить чек за услуги; параллельно – ситуация на любительской игре в теннис.</p></div>
+          <div class="bd-item cause"><span class="bd-label">Причина</span><p>На теннисе поймала мысль «они играют дольше, я точно проиграю» – но сознательно выбрала «я буду играть, и я выиграю» (счёт 6:4). Дело не в самом чеке, а в потолке нынешнего города (Клин).</p></div>
+          <div class="bd-item result"><span class="bd-label">Итог</span><p>Вопрос переформулирован с «как поднять чек» на «как выстроить клиентскую базу в Москве», где нужный уровень чека естественен для рынка.</p><div class="quote" style="margin:12px 0 0">У нас нет задачи найти правильный ответ. Есть задача поставить правильный вопрос – на правильный вопрос всегда есть ответ.<span class="src">Изабелла Найманова</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="part"><span class="dot">5</span><span class="label">Разбор запросов. Часть 2 – вечерняя группа</span></div>
+
+      <div class="case">
+        <div class="case-name">Оля</div>
+        <div class="breakdown">
+          <div class="bd-item"><span class="bd-label">Запрос</span><p>Боль после неудачного массажа тормозит любые шаги, а необходимое обследование откладывается уже полторы недели.</p></div>
+          <div class="bd-item cause"><span class="bd-label">Причина</span><p>Страх услышать неприятный результат. «Изучение отзывов» в поисках идеального врача – тоже форма ухода в теорию, а не действие.</p></div>
+          <div class="bd-item result"><span class="bd-label">Итог</span><p>Эмоция сама по себе – не причина не действовать. Первый шаг – простой вопрос в общем чате с просьбой о рекомендации. Проверка реальностью: «завтра проснёшься – помешает ли тебе, что ты узнала фамилию врача?»</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="part"><span class="dot">5</span><span class="label">Разбор запросов. Часть 2 – вечерняя группа</span></div>
+
+      <div class="case">
+        <div class="case-name">Наталья</div>
+        <div class="breakdown">
+          <div class="bd-item"><span class="bd-label">Запрос</span><p>Собирает новые инструменты и методики, но не доводит ни один до внедрения.</p></div>
+          <div class="bd-item cause"><span class="bd-label">Причина</span><p>Интерес быстро переключается на следующую находку. На бытовом примере (есть быстро вместо осознанного пережёвывания) виден сам механизм срыва: тело уже в движении по старому шаблону.</p></div>
+          <div class="bd-item result">
+            <span class="bd-label">Итог</span>
+            <p>В момент осознания «я же хотела по-другому» нужна конкретная пауза, чтобы выбрать заново. Придумай себе ритуал или слово, которым останавливаешь себя; и напрячься ради результата, и расслабиться – оба варианта тоже воля.</p>
+            <div class="quote" style="margin:12px 0 0">Воля – это не самопринуждение и не насилие над собой. Воля – это свобода: способность самой управлять телом и мозгом, а не позволять им управлять собой.<span class="src">из разбора</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="part"><span class="dot">5</span><span class="label">Разбор запросов. Часть 2 – вечерняя группа</span></div>
+
+      <div class="case">
+        <div class="case-name">Лена</div>
+        <div class="breakdown">
+          <div class="bd-item"><span class="bd-label">Запрос</span><p>Не получается сформулировать цель на курс: мысль мечется между практикой, наймом и вакансиями.</p></div>
+          <div class="bd-item cause"><span class="bd-label">Причина</span><p>Поиск «правильного» ответа через очередные вакансии на HeadHunter вместо исследования, что на самом деле откликается.</p></div>
+          <div class="bd-item result">
+            <span class="bd-label">Итог</span>
+            <div class="formula" style="margin:0 0 12px">Представьте кафе, где стоит 10 чизкейков и 10 других видов пирожных, а чизкейки вы точно не любите: не стоит к ним вообще возвращаться вниманием.</div><p>Главное открытие – про удовольствие: оно идёт до воли. «Мне всё равно, чем заниматься, – я в любое дело вложу удовольствие.» Отсюда и шаг: перестать делать то, что не выбираешь (найм), и искать то, что выбираешь.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="takeaway">
+        <div class="ta-h">Итог практики</div>
+        <p>Обе встречи – утренняя и вечерняя – показывают одно: чаще всего решение уже принято, а тормозит не нехватка информации, а привычка ещё раз всё обдумать вместо первого неидеального шага. При разборе не появляются новые факты – возвращается фокус внимания туда, где он нужен, чтобы двигаться к результату.</p>
+        <p>Вечерняя группа вывела и свою линию: почти каждый запрос собрался вокруг того, <b>что выбирает сердце</b>, – и там же живёт воля как свобода выбора. Уверенность не берут с собой в дорогу – она приходит по дороге, когда идёшь в непривычное. Поэтому вопрос к себе не «как сделать всё правильно», а <b>какой правильный вопрос здесь поставить и что нужно сделать прямо сейчас.</b></p>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="part"><span class="dot">6</span><span class="label">Что делать дальше</span></div>
+
+      <p>Одна встреча в неделю – намеренно. Смысл не в том, чтобы красиво законспектировать и порефлексировать (не быть «попами с ручками»), а в том, чтобы между встречами <b>действовать</b> – и приносить на разбор то, что реально происходит.</p>
+
+      <div class="layers">
+        <div class="layer"><span>1</span><p><b>Заметка в моменте.</b> Как только на неделе случается что-то важное – триггер, эмоция, откладывание, – сразу фиксировать это в заметках или в чате, не дожидаясь встречи.</p></div>
+        <div class="layer"><span>2</span><p><b>Дневник после сессии.</b> Записывать, что думается и чувствуется сразу после практики, чтобы позже вернуться и увидеть, насколько изменилось состояние.</p></div>
+        <div class="layer"><span>3</span><p><b>Работа с бадди.</b> Договариваться о результате и сверяться с партнёром по обучению в промежутках между практиками – в более камерном формате.</p></div>
+        <div class="layer"><span>4</span><p><b>Поделиться в чате.</b> Что уносите с сегодняшней встречи и каким одним действием на этой неделе поступите иначе, чем обычно.</p></div>
+        <div class="layer"><span>5</span><p><b>Ежедневная гигиена принятия решений.</b> Продолжать делать её коротко, но каждый день.</p></div>
+      </div>
+    </div>
+
+  </div>
+
+<script>
+(function(){
+  var btn = document.getElementById('btnPrint');
+  if (btn) btn.addEventListener('click', function(){ window.print(); });
+
+  // iOS Safari tap handling: kill the ~300ms delay without breaking scroll
+  function onTap(el, handler){
+    if (!el) return;
+    var startX = 0, startY = 0, moved = false;
+    el.addEventListener('touchstart', function(e){
+      moved = false;
+      var t = e.changedTouches[0];
+      startX = t.clientX; startY = t.clientY;
+    }, {passive:true});
+    el.addEventListener('touchmove', function(e){
+      var t = e.changedTouches[0];
+      if (Math.abs(t.clientX-startX) > 10 || Math.abs(t.clientY-startY) > 10) moved = true;
+    }, {passive:true});
+    el.addEventListener('touchend', function(e){
+      if (!moved){
+        e.preventDefault();
+        handler(e);
+      }
+    });
+  }
+  function tapOnce(selector, handler){
+    document.querySelectorAll(selector).forEach(function(el){ onTap(el, handler); });
+  }
+  tapOnce('#btnPrint', function(){ window.print(); });
+})();
+</script>
+
+</body></html>
